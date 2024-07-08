@@ -13,7 +13,7 @@
 <a href="https://afdian.net/a/monlor"><img src="https://img.shields.io/badge/爱发电-monlor-purple" alt="爱发电"></a>
 </p>
 
-## 功能特性
+## 功能特性(使用ghcr.nju.edu.cn代理)
 
 ![](https://cdn.monlor.com/2024/6/4/SCR-20240603-kpvb.jpeg)
 
@@ -44,7 +44,7 @@
 > 脚本支持重复执行
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/monlor/docker-xiaoya/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/chris6868/docker-xiaoya/main/install.sh)"
 ```
 
 **使用加速源**
