@@ -1,8 +1,9 @@
 services:
   alist:
-    image: ghcr.io/monlor/xiaoya-alist:latest
+    image: ghcr.nju.edu.cn/monlor/xiaoya-alist:latest
     volumes:
-      - xiaoya:/data
+      - /docker/data/xiaoya:/data
+      - /docker/data/xiaoya/opt:/opt/alist/data
     ports:
       - "5678:5678"
       - "2345:2345"
@@ -13,31 +14,31 @@ services:
     networks:
       - default
   metadata:
-    image: ghcr.io/monlor/xiaoya-metadata:latest
+    image: ghcr.nju.edu.cn/monlor/xiaoya-metadata:latest
     env_file:
       - env
     volumes:
-      - xiaoya:/etc/xiaoya
-      - media:/media/xiaoya
-      - config:/media/config
-      - cache:/media/config/cache
-      - meta:/media/temp
+      - /docker/data/emby/cache:/media/config/cache
+      - /nasdata/media/downloads/xiaoya/meta:/media/temp
+      - /nasdata/media/links/xiaoya:/media/xiaoya
+      - /docker/data/xiaoya:/etc/xiaoya
+      - /docker/data/emby/config:/media/config
     depends_on:
       - alist
     restart: unless-stopped
     networks:
       - default
   emby:
-    image: ghcr.io/monlor/xiaoya-embyserver:latest
+    image: ghcr.nju.edu.cn/monlor/xiaoya-embyserver:latest
     env_file:
       - env
     depends_on:
       - metadata
       - alist
     volumes:
-      - media:/media
-      - config:/config
-      - cache:/cache
+      - /nasdata/media/links/xiaoya:/media
+      - /docker/data/emby/config:/config
+      - /docker/data/emby/cache:/cache
     ports:
       - "6908:6908"
     restart: unless-stopped
