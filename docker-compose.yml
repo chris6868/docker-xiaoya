@@ -1,5 +1,6 @@
 services:
   alist:
+    container_name: xiaoya-alist
     image: ghcr.nju.edu.cn/monlor/xiaoya-alist:latest
     volumes:
       - /docker/data/xiaoya:/data
@@ -14,6 +15,7 @@ services:
     networks:
       - default
   metadata:
+    container_name: xiaoya-metadata
     image: ghcr.nju.edu.cn/monlor/xiaoya-metadata:latest
     env_file:
       - env
@@ -29,6 +31,7 @@ services:
     networks:
       - default
   emby:
+    container_name: xiaoya-emby
     image: ghcr.nju.edu.cn/monlor/xiaoya-embyserver:latest
     env_file:
       - env
