@@ -13,7 +13,7 @@
 <a href="https://afdian.net/a/monlor"><img src="https://img.shields.io/badge/爱发电-monlor-purple" alt="爱发电"></a>
 </p>
 
-## 功能特性(使用ghcr.nju.edu.cn代理)
+## 功能特性(个人使用，ghcr.nju.edu.cn代理)
 
 ![](https://cdn.monlor.com/2024/6/4/SCR-20240603-kpvb.jpeg)
 
